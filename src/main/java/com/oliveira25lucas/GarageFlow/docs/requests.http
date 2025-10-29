@@ -1,0 +1,33 @@
+
+### Health check
+GET http://localhost:8080/healthz
+
+### Ping (D1)
+GET http://localhost:8080/api/ping
+
+### Info (D3)
+GET http://localhost:8080/api/info
+
+### Services (D2/D4 – contrato)
+GET http://localhost:8080/api/v1/services
+
+### Mechanics (D2/D4 – contrato)
+GET http://localhost:8080/api/v1/mechanics
+
+### Appointments (D5 – em memória)
+GET http://localhost:8080/api/v1/appointments
+
+### Criar Appointment (D5 – exemplo)
+POST http://localhost:8080/api/v1/appointments
+Content-Type: application/json
+X-Request-Id: {{$uuid}}
+
+{
+  "customer": {
+    "name": "João da Silva",
+    "email": "joao@example.com"
+  },
+  "serviceId": "srv-001",
+  "mechanicId": "mec-001",
+  "startTime": "2025-10-29T09:00:00-03:00"
+}
